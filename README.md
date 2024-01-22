@@ -24,12 +24,12 @@
 <br>
 
 ### 원하는 경로에서 파일 업로드 방법
-   1. 원하는 경로로 cd 
+   1. 자기 이름 폴더로 cd 
    2. 파일 staging
       -  파일 하나: "git add 파일이름.확장자"
       -  해당 위치 모든 파일: "git add ."
    3. 잘 등록됐는지 확인: "git status"
-   4. 잘 등록 됐으면 commit: git commit -m "커밋메세지"
+   4. 잘 등록 됐으면 커밋: "git commit -m "여기커밋메세지입력""
    5. fork한 원격 repository에 파일 업로드: "git push origin main"
 
 <br>
