@@ -47,7 +47,8 @@
 <br>
 
 ### 원본 repository의 수정사항 자신의 fork된 repository에 반영 방법
-1. "Fetch and merge" 버튼 클릭
+1. 초록색 Code 버튼 아래에 있는 "Sync fork" 버튼 클릭
+2. "update branch" 버튼 클릭
 
 <br>
 
