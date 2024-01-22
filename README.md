@@ -44,6 +44,7 @@
 4. "Create pull request" 버튼 클릭
 5. Pull request 제목과 내용 작성 후 "Create pull request" 버튼 클릭
 
+<br>
 
 ### 원본 repository의 수정사항 자신의 fork된 repository에 반영 방법
 1. "Fetch and merge" 버튼 클릭
