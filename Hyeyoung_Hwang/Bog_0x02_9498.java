@@ -26,6 +26,5 @@ public class Bog_0x02_9498 {    //O(1)
         }
 
         System.out.println(answer);
-
     }
 }
