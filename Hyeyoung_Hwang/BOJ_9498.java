@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Bog_0x02_9498 {    //O(1)
+public class BOJ_9498 {    //O(1)
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
