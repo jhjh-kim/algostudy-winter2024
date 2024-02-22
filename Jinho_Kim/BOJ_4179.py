@@ -1,40 +1,32 @@
-# study,,
+import sys
 from collections import deque
-dx = [0, 0, -1, 1]
-dy = [-1, 1, 0, 0]
+input = sys.stdin.readline
 
+dy, dx = [0, 0, 1, -1], [1, -1, 0, 0]
+Q = deque()
+ylmt, xlmt = map(int, input().split())
+maze = [[*input().rstrip()] for _ in range(ylmt)]
+visit = [[0] * xlmt for _ in range(ylmt)]
 
-def bfs(q):
+for y in range(ylmt):
+    for x in range(xlmt):
+        if maze[y][x] == 'J':
+            visit[y][x] = 1
+            Q.append((y, x, 'J'))
+        elif maze[y][x] == 'F':
+            visit[y][x] = 1
+            Q.appendleft((y, x, 'F')) #Fire goes first
 
-    while q:
-        x, y, s = q.popleft()
-        for i in range(4):
-            nx, ny = x+dx[i], y+dy[i]
-            if 0 <= nx < n and 0 <= ny < m:
-                if visit[nx][ny]==-1 and a[nx][ny] == '.':
-                    q.append((nx, ny, s))
-                    visit[nx][ny] = visit[x][y] + 1
-            else:
-                if s == 'J':
-                    return visit[x][y]+1
+while Q:
+    y, x, s = Q.popleft()
+    for i in range(4):
+        ny, nx = y + dy[i], x + dx[i]
+        if 0 <= ny < ylmt and 0 <= nx < xlmt:
+            if not visit[ny][nx] and maze[ny][nx] == '.':
+                visit[ny][nx] = visit[y][x] + 1
+                Q.append((ny, nx, s))
+        elif s == 'J':
+            print(visit[y][x])
+            exit()
 
-
-n, m = map(int, input().split())
-a = [list(input()) for _ in range(n)]
-visit = [[-1]*m for _ in range(n)]
-q = deque()
-
-for i in range(n):
-    for j in range(m):
-        if a[i][j] == 'J':
-            visit[i][j] = 0
-            q.append((i, j, 'J'))
-        if a[i][j] == 'F':
-            visit[i][j] = 0
-            q.appendleft((i, j, 'F'))
-
-ans = bfs(q)
-if ans:
-    print(ans)
-else:
-    print('IMPOSSIBLE')
+print("IMPOSSIBLE")
